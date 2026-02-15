@@ -3,11 +3,21 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://petermitten.com',
+  site: import.meta.env.PUBLIC_SITE_URL || 'https://petermitten.com',
   output: 'static',
   build: {
     assets: 'assets'
   },
+  integrations: [
+    {
+      name: 'theme-switcher-toolbar',
+      hooks: {
+        'astro:config:setup': ({ addDevToolbarApp }) => {
+          addDevToolbarApp('./src/dev-toolbar/theme-switcher.ts');
+        }
+      }
+    }
+  ],
   vite: {
     css: {
       preprocessorOptions: {

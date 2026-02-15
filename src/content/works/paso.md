@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/paso/paso.png
+image: /images/works/paso/paso.png
 gallery_images:
 ---
 

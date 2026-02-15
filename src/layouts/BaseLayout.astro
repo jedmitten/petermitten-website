@@ -37,7 +37,11 @@ const SITE_THEME = SITE_CONFIG.theme.default;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
     <!-- Set color scheme for browser UI -->
-    <script is:inline define:vars={{ theme: SITE_THEME }}>
+    <script is:inline define:vars={{ defaultTheme: SITE_THEME }}>
+        // Check localStorage for theme preference (set by dev toolbar or user preference)
+        const savedTheme = localStorage.getItem('theme');
+        const theme = savedTheme || defaultTheme;
+        document.documentElement.setAttribute('data-theme', theme);
         document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
     </script>
 </head>

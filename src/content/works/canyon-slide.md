@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/canyon-slide/canyon-slide.jpg
+image: /images/works/canyon-slide/canyon-slide.jpg
 gallery_images:
 ---
 

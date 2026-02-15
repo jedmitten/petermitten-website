@@ -10,20 +10,20 @@ export const SITE_CONFIG = {
   title: 'Peter Mitten',
   subtitle: 'Artist - San Diego & Southern California',
   description: 'Contemporary artist based in San Diego and Southern California since 1977. Explore paintings, drawings, and artwork inspired by the California landscape.',
-  url: 'https://petermitten.com',
+  url: import.meta.env.PUBLIC_SITE_URL || 'https://petermitten.com',
 
   // Author info
   author: {
     name: 'Peter Mitten',
     bio: 'Artist and painter residing in San Diego since 1977',
     location: 'San Diego, California',
-    email: 'contact@petermitten.com'
+    email: import.meta.env.CONTACT_EMAIL || 'contact@petermitten.com'
   },
 
   // Theme Settings (Admin Only)
   // Options: 'light', 'dark', 'sandiego-sunset', 'california-ocean', 'gallery-minimal'
   theme: {
-    default: 'light',
+    default: 'california-ocean',
     available: [
       'light',
       'dark',

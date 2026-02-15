@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/the-two-ls/the-two-ls.png
+image: /images/works/the-two-ls/the-two-ls.png
 gallery_images:
 ---
 

@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/Stacked-Brands/Stacked-Brands.png
+image: /images/works/Stacked-Brands/Stacked-Brands.png
 gallery_images:
 ---
 

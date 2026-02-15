@@ -4,12 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run validate && astro build",
+    "validate": "node scripts/validate-images.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^5.17.1",
+    "bundle": "^2.1.0",
     "sass": "^1.83.0"
   }
 }
