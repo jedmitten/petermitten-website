@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jedmitten.github.io/petermitten.com',
-  base: '/petermitten.com',
+  // No base in config - passed via CLI in GitHub Actions
   output: 'static',
   build: {
     assets: 'assets'

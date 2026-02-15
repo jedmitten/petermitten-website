@@ -38,11 +38,12 @@ jobs:
         run: npm run validate
 
       - name: Build with Astro
-        uses: withastro/action@v3
+        run: npm run build -- --site "https://jedmitten.github.io/petermitten.com" --base "/petermitten.com"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: .
-          node-version: 20
-          package-manager: npm@latest
+          path: ./dist
 
   deploy:
     needs: build
