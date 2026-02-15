@@ -1,0 +1,6 @@
+# Default owner for everything
+*       @jedmitten
+
+# Override for images directory
+/images/ @jonmitten
+
