@@ -1,0 +1,51 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.scss';
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description = 'Contemporary artist based in San Diego and Southern California since 1977. Explore paintings, drawings, and artwork inspired by the California landscape.' } = Astro.props;
+
+// Admin-only theme setting (change this to switch themes)
+const SITE_THEME = 'light'; // Options: 'light', 'dark', 'sandiego-sunset', 'california-ocean', 'gallery-minimal'
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme={SITE_THEME}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Peter Mitten</title>
+    <meta name="description" content={description}>
+    <meta name="author" content="Peter Mitten">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={`${title} | Peter Mitten`}>
+    <meta property="og:description" content={description}>
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={`${title} | Peter Mitten`}>
+    <meta name="twitter:description" content={description}>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Set color scheme for browser UI -->
+    <script is:inline define:vars={{ theme: SITE_THEME }}>
+        document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light';
+    </script>
+</head>
+<body>
+    <Header />
+    <main>
+        <slot />
+    </main>
+    <Footer />
+</body>
+</html>
