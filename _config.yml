@@ -1,5 +1,7 @@
 title: "Peter Mitten"
 description: "Sculpture"
+url: "https://jedmitten.github.io"
+baseurl: "/petermitten.com"
 
 collections:
   works:

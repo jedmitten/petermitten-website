@@ -7,4 +7,4 @@ title: Home
 
 Sculpture archive.
 
-[Enter Gallery →](/gallery/)
+[Enter Gallery →]({{ '/gallery/' | relative_url }})
