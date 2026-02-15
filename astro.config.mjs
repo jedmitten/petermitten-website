@@ -3,8 +3,8 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: import.meta.env.PUBLIC_SITE_URL || 'https://jedmitten.github.io/petermitten.com',
-  base: import.meta.env.BASE_URL || (import.meta.env.PROD ? '/petermitten.com' : undefined),
+  site: 'https://jedmitten.github.io/petermitten.com',
+  base: process.env.CI ? '/petermitten.com' : undefined,
   output: 'static',
   build: {
     assets: 'assets'

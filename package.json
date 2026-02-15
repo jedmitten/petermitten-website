@@ -13,5 +13,8 @@
     "astro": "^5.17.1",
     "bundle": "^2.1.0",
     "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3"
   }
 }
