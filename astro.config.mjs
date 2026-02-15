@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: import.meta.env.PUBLIC_SITE_URL || 'https://jedmitten.github.io/petermitten.com',
+  // base is set via CLI in GitHub Actions, omit for local dev
   output: 'static',
   build: {
     assets: 'assets'

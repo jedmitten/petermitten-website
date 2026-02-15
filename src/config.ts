@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
   title: 'Peter Mitten',
   subtitle: 'Artist - San Diego & Southern California',
   description: 'Contemporary artist based in San Diego and Southern California since 1977. Explore paintings, drawings, and artwork inspired by the California landscape.',
-  url: import.meta.env.PUBLIC_SITE_URL || 'https://jedmitten.github.com/petermitten.com',
+  url: import.meta.env.PUBLIC_SITE_URL || 'https://jedmitten.github.io/petermitten.com',
 
   // Author info
   author: {
