@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/crevasse-3/crevasse-3.png
+image: /images/works/crevasse-3/crevasse-3.png
 gallery_images:
 ---
 

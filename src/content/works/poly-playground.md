@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/poly-playground/poly-playground.jpg
+image: /images/works/poly-playground/poly-playground.jpg
 gallery_images:
 ---
 

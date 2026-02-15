@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/cimmaron/cimmaron.png
+image: /images/works/cimmaron/cimmaron.png
 gallery_images:
 ---
 

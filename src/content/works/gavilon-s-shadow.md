@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/Gavilon_s_Shadow/Gavilon_s_Shadow.jpg
+image: /images/works/Gavilon_s_Shadow/Gavilon_s_Shadow.jpg
 gallery_images:
 ---
 

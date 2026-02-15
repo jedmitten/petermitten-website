@@ -4,7 +4,7 @@ year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/gorge_1/gorge_1.png
+image: /images/works/gorge_1/gorge_1.png
 gallery_images:
 ---
 

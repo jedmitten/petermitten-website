@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import { GALLERY_CONFIG } from '../config';
 
 const allWorks = await getCollection('works');
 ---
@@ -16,6 +17,7 @@ const allWorks = await getCollection('works');
             <button class="filter-btn" data-filter="drawing">Drawings</button>
             <button class="filter-btn" data-filter="sculpture">Sculpture</button>
             <button class="filter-btn" data-filter="mixed-media">Mixed Media</button>
+            <button class="filter-btn" data-filter="studio">Studio</button>
         </div>
 
         <div class="gallery-grid">
@@ -28,9 +30,9 @@ const allWorks = await getCollection('works');
                     <Image
                         src={work.data.image}
                         alt={work.data.title}
-                        width={600}
-                        height={450}
-                        quality={85}
+                        width={GALLERY_CONFIG.thumbnail.width}
+                        height={GALLERY_CONFIG.thumbnail.height}
+                        quality={GALLERY_CONFIG.thumbnail.quality}
                         loading="lazy"
                         inferSize={true}
                     />

@@ -1,14 +1,15 @@
 ---
-// Header component
+import { SITE_CONFIG } from '../config';
+import { NAV_ITEMS } from '../data/navigation';
 ---
 
 <header class="nav">
     <div class="wrap bar">
-        <a class="brand" href="/">Peter Mitten</a>
+        <a class="brand" href="/">{SITE_CONFIG.title}</a>
         <nav>
-            <a href="/gallery/">Gallery</a>
-            <a href="/cv/">CV</a>
-            <a href="/shows/">Shows</a>
+            {NAV_ITEMS.map(item => (
+                <a href={item.href}>{item.label}</a>
+            ))}
         </nav>
     </div>
 </header>

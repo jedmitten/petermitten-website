@@ -26,19 +26,28 @@ Contemporary artist portfolio website built with Astro.
    npm install
    ```
 
-2. **Start development server:**
+2. **Set up environment variables:**
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edit `.env` if you need to customize the site URL or contact email.
+
+3. **Start development server:**
    ```bash
    npm run dev
    ```
 
    The site will be available at `http://localhost:4321`
 
-3. **Build for production:**
+4. **Build for production:**
    ```bash
    npm run build
    ```
 
-4. **Preview production build:**
+   This will automatically validate all image references before building.
+
+5. **Preview production build:**
    ```bash
    npm run preview
    ```
@@ -83,17 +92,35 @@ The site features 5 custom themes (admin-controlled):
 
 **Admin only:** To change the site theme, see `ADMIN-GUIDE.md`
 
+## Environment Variables
+
+The site uses environment variables for configuration:
+
+- `PUBLIC_SITE_URL` - Your site's URL (default: https://petermitten.com)
+- `CONTACT_EMAIL` - Contact email address (default: contact@petermitten.com)
+
+These are configured in `.env` for local development. For production, they're set in the CI/CD workflow.
+
 ## Content Management
 
 ### Adding New Artwork
 
-1. Create a new markdown file in `src/content/works/`:
+1. **Create image folder** in `public/images/works/`:
+   ```bash
+   mkdir -p public/images/works/artwork-name
+   ```
+
+2. **Add images** to that folder:
+   - Main image (e.g., `main.jpg`)
+   - Optional gallery images for detail views
+
+3. **Create markdown file** in `src/content/works/artwork-name.md`:
 
 ```markdown
 ---
 title: "Artwork Title"
 year: 2024
-category: "painting"  # painting, drawing, sculpture, mixed-media
+category: "painting"  # painting, drawing, sculpture, mixed-media, studio
 materials: "Oil on canvas"
 dimensions: "24 x 36 inches"
 image: /images/works/artwork-name/main.jpg
@@ -110,13 +137,65 @@ location: "San Diego, CA"
 Description of the artwork goes here.
 ```
 
-2. Add images to `public/images/works/artwork-name/`
+4. **Validate images** before committing:
+   ```bash
+   npm run validate
+   ```
 
-3. The gallery will automatically update
+5. **Preview locally**:
+   ```bash
+   npm run dev
+   ```
+
+6. The gallery will automatically update
+
+### Image Requirements
+
+**IMPORTANT:** Image paths must follow this format:
+
+- **Correct:** `/images/works/artwork-name/file.jpg`
+- **Wrong:** `/assets/images/works/...` (old format)
+- **Wrong:** `/public/images/...` (includes public directory)
+
+**Valid categories:**
+- `painting`
+- `drawing`
+- `sculpture`
+- `mixed-media`
+- `studio`
+
+**Valid image extensions:**
+- `.jpg`, `.jpeg`, `.png`, `.webp`, `.gif`
+
+The build process will automatically validate all image references and fail if:
+- An image path is incorrectly formatted
+- An image file doesn't exist in the `public/` directory
+- A category is not in the valid list
+
+## Validation
+
+Before deploying, validate your content:
+
+```bash
+npm run validate
+```
+
+This checks:
+- All image paths are correctly formatted
+- All referenced images exist in the `public/` directory
+- All categories are valid
+- All years are in valid range (1900-2100)
+
+The build command (`npm run build`) automatically runs validation first.
 
 ## Deployment
 
 The site automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
+
+The deployment workflow:
+1. Validates all content and images
+2. Builds the static site
+3. Deploys to GitHub Pages
 
 ### Manual Deployment
 
