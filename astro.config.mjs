@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jedmitten.github.io/petermitten.com',
-  base: process.env.CI ? '/petermitten.com' : undefined,
+  base: '/petermitten.com',
   output: 'static',
   build: {
     assets: 'assets'
