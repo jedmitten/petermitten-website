@@ -1,4 +1,5 @@
 ---
+import { SITE_CONFIG, SEO_CONFIG } from '../config';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.scss';
@@ -8,10 +9,8 @@ interface Props {
     description?: string;
 }
 
-const { title, description = 'Contemporary artist based in San Diego and Southern California since 1977. Explore paintings, drawings, and artwork inspired by the California landscape.' } = Astro.props;
-
-// Admin-only theme setting (change this to switch themes)
-const SITE_THEME = 'light'; // Options: 'light', 'dark', 'sandiego-sunset', 'california-ocean', 'gallery-minimal'
+const { title, description = SITE_CONFIG.description } = Astro.props;
+const SITE_THEME = SITE_CONFIG.theme.default;
 ---
 
 <!DOCTYPE html>
@@ -19,19 +18,20 @@ const SITE_THEME = 'light'; // Options: 'light', 'dark', 'sandiego-sunset', 'cal
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} | Peter Mitten</title>
+    <title>{title} | {SITE_CONFIG.title}</title>
     <meta name="description" content={description}>
-    <meta name="author" content="Peter Mitten">
+    <meta name="author" content={SITE_CONFIG.author.name}>
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content={`${title} | Peter Mitten`}>
+    <meta property="og:type" content={SEO_CONFIG.ogType}>
+    <meta property="og:title" content={`${title} | ${SITE_CONFIG.title}`}>
     <meta property="og:description" content={description}>
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content={SEO_CONFIG.locale}>
+    <meta property="og:site_name" content={SITE_CONFIG.title}>
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content={`${title} | Peter Mitten`}>
+    <meta name="twitter:card" content={SEO_CONFIG.twitterCard}>
+    <meta name="twitter:title" content={`${title} | ${SITE_CONFIG.title}`}>
     <meta name="twitter:description" content={description}>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">

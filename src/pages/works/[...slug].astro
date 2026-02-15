@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import { GALLERY_CONFIG } from '../../config';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths = (async () => {
@@ -24,9 +25,9 @@ const { Content } = await work.render();
             src={work.data.image}
             alt={work.data.title}
             class="work-image"
-            width={1200}
-            height={900}
-            quality={90}
+            width={GALLERY_CONFIG.fullsize.width}
+            height={GALLERY_CONFIG.fullsize.height}
+            quality={GALLERY_CONFIG.fullsize.quality}
             inferSize={true}
         />
 
@@ -92,7 +93,7 @@ const { Content } = await work.render();
                     {work.data.gallery_images.map((image: string | { src: string, alt: string }) => {
                         const src = typeof image === 'string' ? image : image.src;
                         const alt = typeof image === 'string' ? `${work.data.title} - detail` : image.alt;
-                        return <Image src={src} alt={alt} width={800} height={600} quality={85} loading="lazy" inferSize={true} />;
+                        return <Image src={src} alt={alt} width={GALLERY_CONFIG.galleryImages.width} height={GALLERY_CONFIG.galleryImages.height} quality={GALLERY_CONFIG.galleryImages.quality} loading="lazy" inferSize={true} />;
                     })}
                 </div>
             </div>
