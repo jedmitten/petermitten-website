@@ -66,6 +66,14 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
+      - name: Create .env file
+        run: |
+          echo "PUBLIC_SITE_URL=${{ steps.pages.outputs.origin }}" > .env
+          echo "CONTACT_EMAIL=contact@petermitten.com" >> .env
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Validate content and images
+        run: ${{ steps.detect-package-manager.outputs.runner }} npm run validate
+        working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
