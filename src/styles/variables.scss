@@ -1,0 +1,135 @@
+// ============================================
+// THEME VARIABLES - Industry Standard Approach
+// ============================================
+
+:root {
+    // ========== LIGHT THEME (Default) ==========
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8f9fa;
+    --color-bg-tertiary: #e9ecef;
+
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #4a4a4a;
+    --color-text-tertiary: #6c757d;
+
+    --color-border: #dee2e6;
+    --color-border-light: #e9ecef;
+
+    --color-accent: #2d3436;
+    --color-link: #0066cc;
+    --color-link-hover: #0052a3;
+
+    // Gallery specific
+    --gallery-bg: #ffffff;
+    --gallery-overlay: rgba(0, 0, 0, 0.75);
+    --gallery-border: #e0e0e0;
+
+    // Shadows
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+// ========== DARK THEME ==========
+[data-theme="dark"] {
+    --color-bg-primary: #0d1117;
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #21262d;
+
+    --color-text-primary: #e6edf3;
+    --color-text-secondary: #c9d1d9;
+    --color-text-tertiary: #8b949e;
+
+    --color-border: #30363d;
+    --color-border-light: #21262d;
+
+    --color-accent: #f0f6fc;
+    --color-link: #58a6ff;
+    --color-link-hover: #79c0ff;
+
+    --gallery-bg: #161b22;
+    --gallery-overlay: rgba(13, 17, 23, 0.85);
+    --gallery-border: #30363d;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+// ========== SAN DIEGO SUNSET THEME ==========
+[data-theme="sandiego-sunset"] {
+    --color-bg-primary: #fef9f3;
+    --color-bg-secondary: #fef3e8;
+    --color-bg-tertiary: #fde8d0;
+
+    --color-text-primary: #2c1810;
+    --color-text-secondary: #5c3820;
+    --color-text-tertiary: #8c5830;
+
+    --color-border: #f4d5b8;
+    --color-border-light: #fce8d8;
+
+    --color-accent: #d4524f;
+    --color-link: #c7402d;
+    --color-link-hover: #a8331f;
+
+    --gallery-bg: #ffffff;
+    --gallery-overlay: rgba(212, 82, 79, 0.88);
+    --gallery-border: #f4d5b8;
+
+    --shadow-sm: 0 1px 3px rgba(212, 82, 79, 0.12);
+    --shadow-md: 0 4px 6px rgba(212, 82, 79, 0.15);
+    --shadow-lg: 0 10px 25px rgba(212, 82, 79, 0.2);
+}
+
+// ========== CALIFORNIA OCEAN THEME ==========
+[data-theme="california-ocean"] {
+    --color-bg-primary: #f5f9fc;
+    --color-bg-secondary: #e8f2f7;
+    --color-bg-tertiary: #d5e8f0;
+
+    --color-text-primary: #0f2942;
+    --color-text-secondary: #1f3952;
+    --color-text-tertiary: #4a667d;
+
+    --color-border: #b8d4e3;
+    --color-border-light: #d5e8f0;
+
+    --color-accent: #1d4e89;
+    --color-link: #006bb3;
+    --color-link-hover: #005a94;
+
+    --gallery-bg: #ffffff;
+    --gallery-overlay: rgba(29, 78, 137, 0.88);
+    --gallery-border: #b8d4e3;
+
+    --shadow-sm: 0 1px 3px rgba(29, 78, 137, 0.12);
+    --shadow-md: 0 4px 6px rgba(29, 78, 137, 0.15);
+    --shadow-lg: 0 10px 25px rgba(29, 78, 137, 0.2);
+}
+
+// ========== GALLERY MINIMAL THEME ==========
+[data-theme="gallery-minimal"] {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #fafafa;
+    --color-bg-tertiary: #f0f0f0;
+
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #666666;
+
+    --color-border: #e0e0e0;
+    --color-border-light: #f0f0f0;
+
+    --color-accent: #000000;
+    --color-link: #000000;
+    --color-link-hover: #333333;
+
+    --gallery-bg: #ffffff;
+    --gallery-overlay: rgba(0, 0, 0, 0.6);
+    --gallery-border: #e0e0e0;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+}

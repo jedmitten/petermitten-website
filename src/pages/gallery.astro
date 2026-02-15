@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const allWorks = await getCollection('works');
+---
+
+<BaseLayout title="Gallery" description="View all artworks by Peter Mitten">
+    <div class="gallery-container">
+        <h1>Gallery</h1>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="painting">Paintings</button>
+            <button class="filter-btn" data-filter="drawing">Drawings</button>
+            <button class="filter-btn" data-filter="sculpture">Sculpture</button>
+            <button class="filter-btn" data-filter="mixed-media">Mixed Media</button>
+        </div>
+
+        <div class="gallery-grid">
+            {allWorks.map(work => (
+                <a
+                    href={`/works/${work.slug}/`}
+                    class="gallery-card"
+                    data-category={work.data.category || 'uncategorized'}
+                >
+                    <Image
+                        src={work.data.image}
+                        alt={work.data.title}
+                        width={600}
+                        height={450}
+                        quality={85}
+                        loading="lazy"
+                        inferSize={true}
+                    />
+                    <div class="card-content">
+                        <h3>{work.data.title}</h3>
+                        <div class="meta">
+                            {work.data.year && <span>{work.data.year}</span>}
+                            {work.data.materials && work.data.year && <span> • </span>}
+                            {work.data.materials && <span>{work.data.materials}</span>}
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+</BaseLayout>
+
+<script>
+class GalleryFilter {
+    private filterButtons: NodeListOf<HTMLButtonElement>;
+    private galleryCards: NodeListOf<HTMLElement>;
+
+    constructor() {
+        this.filterButtons = document.querySelectorAll('.filter-btn');
+        this.galleryCards = document.querySelectorAll('.gallery-card');
+
+        this.initializeEventListeners();
+    }
+
+    private initializeEventListeners() {
+        this.filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter!;
+                this.applyFilter(filter);
+                this.updateActiveButton(button);
+            });
+        });
+    }
+
+    private applyFilter(filter: string) {
+        this.galleryCards.forEach(card => {
+            const category = card.dataset.category;
+
+            if (filter === 'all' || category === filter) {
+                card.style.display = 'block';
+                // Add fade-in animation
+                card.style.animation = 'fadeIn 0.3s ease';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    private updateActiveButton(activeButton: HTMLButtonElement) {
+        this.filterButtons.forEach(button => {
+            button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+    }
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new GalleryFilter());
+} else {
+    new GalleryFilter();
+}
+</script>
+
+<style lang="scss">
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    h1 {
+        margin-bottom: 2rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
