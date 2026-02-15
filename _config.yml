@@ -1,4 +1,14 @@
+title: "Peter Mitten"
+description: "Sculpture"
+
 collections:
   works:
     output: true
     permalink: /works/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: works
+    values:
+      layout: work

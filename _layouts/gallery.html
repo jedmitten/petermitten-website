@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<section class="grid">
+    {% for work in site.works %}
+    <a class="tile" href="{{ work.url | relative_url }}">
+        <img src="{{ work.image | relative_url }}" alt="{{ work.title }}">
+        <div class="cap">
+            <strong>{{ work.title }}</strong><br>
+            <span>{{ work.year }}</span>
+        </div>
+    </a>
+    {% endfor %}
+</section>
