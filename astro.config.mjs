@@ -14,7 +14,11 @@ export default defineConfig({
       name: 'theme-switcher-toolbar',
       hooks: {
         'astro:config:setup': ({ addDevToolbarApp }) => {
-          addDevToolbarApp('./src/dev-toolbar/theme-switcher.ts');
+          addDevToolbarApp({
+              entrypoint: './src/dev-toolbar/theme-switcher.ts',
+              id: 'theme-switcher',
+              name: 'Theme Switcher'
+          });
         }
       }
     }
