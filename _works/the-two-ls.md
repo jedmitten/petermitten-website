@@ -6,7 +6,7 @@ materials: ""
 dimensions: ""
 image: /assets/images/works/the-two-ls/the-two-ls.png
 gallery_images:
-  - /assets/images/works/the-two-ls/the-two-ls-s.png
+  - src: /assets/images/works/the-two-ls/the-two-ls-s.png
 ---
 
 Description goes here.
