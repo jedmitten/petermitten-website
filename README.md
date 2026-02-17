@@ -107,16 +107,25 @@ Original high-resolution images from the previous site are organized as follows 
 
 If your edits aren't appearing on the live site:
 
-1. **Hard refresh your browser** to bypass cache:
+1. **Check GitHub Actions** - The site deploys via GitHub Pages. Go to the [Actions tab](https://github.com/jedmitten/petermitten-website/actions) to verify the build completed successfully.
+
+2. **Wait for deployment** - After pushing to `main`, GitHub Pages typically takes 1-3 minutes to rebuild and deploy.
+
+3. **Hard refresh your browser** to bypass cache:
    - Chrome/Edge: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
    - Firefox: `Ctrl+F5` (Windows) or `Cmd+Shift+R` (Mac)
 
-2. **Clear browser cache** for the site
+4. **Clear browser cache** for the site
 
-3. **Rebuild Jekyll** if testing locally:
-   ```bash
-   rm -rf _site
-   bundle exec jekyll serve
-   ```
+5. **Check build logs** - If the Actions build failed, the error will appear in the workflow logs.
 
 CSS changes in particular are heavily cached by browsers.
+
+### Local Development
+
+To test changes locally before pushing:
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
