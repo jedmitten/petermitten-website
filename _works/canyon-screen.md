@@ -5,8 +5,8 @@ category: "studio"
 materials: ""
 dimensions: ""
 image: /assets/images/works/Canyon-Screen/Canyon-Screen.png
-gallery:
-   - /assets/images/works/Canyon-Screen/canyon-slide.png
+gallery_images:
+  - /assets/images/works/Canyon-Screen/canyon-slide.png
 ---
 
 Description goes here.
