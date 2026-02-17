@@ -26,9 +26,11 @@ title: Sculpture Title
 category: public-works   # or residential-works
 tags: [bronze]
 image: /assets/images/works/sculpture-title.jpg
-gallery:
-  - /assets/images/works/sculpture-title-detail.jpg
-  - /assets/images/works/sculpture-title-view-b.jpg
+gallery_images:
+  - src: /assets/images/works/sculpture-title/detail.jpg
+    caption: "Detail view"
+  - src: /assets/images/works/sculpture-title/view-b.jpg
+    caption: "Alternate view"
 featured: false
 ---
 
@@ -43,7 +45,25 @@ Update the `image:` field in the work's front matter to point to the new file, a
 
 ### Adding a Detail Image or Additional Views
 
-Add image paths to the `gallery:` list in the work's front matter. Images appear in the order listed. For example, Gavilon's Shadow has a detail shot (`Gavilon_s-Shadow-detail.png`) that can be added as a second gallery entry.
+Add images to the `gallery_images:` list in the work's front matter. You can use either a simple array of paths or objects with captions:
+
+**Simple array (no captions):**
+```yaml
+gallery_images:
+  - /assets/images/works/sculpture-name/detail-1.jpg
+  - /assets/images/works/sculpture-name/detail-2.jpg
+```
+
+**With captions:**
+```yaml
+gallery_images:
+  - src: /assets/images/works/sculpture-name/detail-1.jpg
+    caption: "Detail view"
+  - src: /assets/images/works/sculpture-name/detail-2.jpg
+    caption: "Installation view"
+```
+
+Images appear in the order listed. The layout uses the `.grid.detail` class which displays images at their natural aspect ratios in a responsive grid (minimum 400px columns).
 
 ### Homepage Slides
 
@@ -86,3 +106,25 @@ Original high-resolution images from the previous site are organized as follows 
 - `assets/images/works/` — primary sculpture images
 - `assets/images/slides/` — homepage carousel images
 - `assets/images/works/details/` — detail shots (Gavilon's Shadow has one)
+
+---
+
+## Troubleshooting
+
+### Changes Not Showing Up
+
+If your edits aren't appearing on the live site:
+
+1. **Hard refresh your browser** to bypass cache:
+   - Chrome/Edge: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac)
+   - Firefox: `Ctrl+F5` (Windows) or `Cmd+Shift+R` (Mac)
+
+2. **Clear browser cache** for the site
+
+3. **Rebuild Jekyll** if testing locally:
+   ```bash
+   rm -rf _site
+   bundle exec jekyll serve
+   ```
+
+CSS changes in particular are heavily cached by browsers.
