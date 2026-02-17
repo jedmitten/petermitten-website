@@ -23,7 +23,7 @@ Each sculpture is a Markdown file in the `_works/` collection. To add a new work
 ```yaml
 ---
 title: Sculpture Title
-category: public-works   # or residential-works
+category: studio   # Current categories in use: "studio", "public", "residential"
 tags: [bronze]
 image: /assets/images/works/sculpture-title.jpg
 gallery_images:
@@ -45,9 +45,8 @@ Update the `image:` field in the work's front matter to point to the new file, a
 
 ### Adding a Detail Image or Additional Views
 
-Add images to the `gallery_images:` list in the work's front matter. You can use either a simple array of paths or objects with captions:
+Add images to the `gallery_images:` list in the work's front matter using objects with `src` and optional `caption` properties:
 
-**Captions are optional:**
 ```yaml
 gallery_images:
   - src: /assets/images/works/sculpture-name/detail-1.jpg
@@ -56,11 +55,11 @@ gallery_images:
     caption: "Installation view"
 ```
 
-Images appear in the order listed. The layout uses the `.grid.detail` class which displays images at their natural aspect ratios in a responsive grid (minimum 400px columns).
+The `caption` field is optional - you can omit it if you don't need captions. Images appear in the order listed. The layout uses the `.grid.detail` class which displays images at their natural aspect ratios in a responsive grid (minimum 400px columns).
 
 ### Homepage Slides
 
-The homepage carousel pulls from the `_slides/` collection (or a `slides:` list in `_config.yml` or `index.md` front matter, depending on implementation). The three original slide images from the previous site are:
+The homepage carousel is configured in `index.md`. The three original slide images from the previous site are:
 
 | Work | Image file |
 |------|-----------|
@@ -68,7 +67,7 @@ The homepage carousel pulls from the `_slides/` collection (or a `slides:` list 
 | Gavilon's Shadow | `assets/images/slides/gavilons-shadow-slide.jpg` |
 | Echoes of Shawanasee | `assets/images/slides/echoes-of-shawanasee-slide.jpg` |
 
-To change which images appear on the homepage, update the slides collection or the `slides:` front matter in `index.md`.
+Check `index.md` to see how slides are currently configured and update accordingly.
 
 ### Background Color / Background Image
 
@@ -86,7 +85,7 @@ permalink: /about/
 ---
 ```
 
-Then add it to the site navigation in `_data/nav.yml` (or equivalent navigation data file).
+Then add it to the site navigation by editing `_includes/header.html` (or the relevant include file where the navigation is defined).
 
 ### Updating the Contact Page Text
 
