@@ -47,14 +47,7 @@ Update the `image:` field in the work's front matter to point to the new file, a
 
 Add images to the `gallery_images:` list in the work's front matter. You can use either a simple array of paths or objects with captions:
 
-**Simple array (no captions):**
-```yaml
-gallery_images:
-  - /assets/images/works/sculpture-name/detail-1.jpg
-  - /assets/images/works/sculpture-name/detail-2.jpg
-```
-
-**With captions:**
+**Captions are optional:**
 ```yaml
 gallery_images:
   - src: /assets/images/works/sculpture-name/detail-1.jpg
