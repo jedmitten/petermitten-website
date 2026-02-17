@@ -15,7 +15,7 @@ layout: default
 {{ content }}
 
 {% if page.gallery_images %}
-<div class="grid">
+<div class="grid detail">
     {% for img in page.gallery_images %}
     <img src="{{ img.src | relative_url }}">
     {% endfor %}
