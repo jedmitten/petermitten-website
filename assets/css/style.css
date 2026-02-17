@@ -44,6 +44,22 @@ nav a:hover {
     gap: 14px;
     margin-top: 20px;
 }
+.grid img {
+    width: 100%;
+    height: auto; /* Override the fixed height */
+    object-fit: contain; /* Change from cover to contain */
+}
+
+/* Or create a specific class for work detail pages */
+.grid.detail {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.grid.detail img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
 .tile {
     position: relative;
