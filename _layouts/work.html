@@ -2,6 +2,41 @@
 layout: default
 ---
 
+{% assign works = site.works | sort: 'title' %}
+{% for work in works %}
+    {% if work.url == page.url %}
+        {% assign current_index = forloop.index %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% assign prev_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+
+{% if prev_index > 0 %}
+    {% assign prev_work = works[prev_index] %}
+{% else %}
+    {% assign prev_work = works.last %}
+{% endif %}
+
+{% if next_index <= works.size %}
+    {% assign next_work = works[next_index] %}
+{% else %}
+    {% assign next_work = works.first %}
+{% endif %}
+
+<nav class="work-nav">
+    <a href="{{ prev_work.url | relative_url }}" class="work-nav-btn prev">
+        <span class="arrow">←</span>
+        <span class="label">Previous</span>
+    </a>
+    <a href="{{ '/gallery/' | relative_url }}" class="work-nav-btn gallery">Gallery</a>
+    <a href="{{ next_work.url | relative_url }}" class="work-nav-btn next">
+        <span class="label">Next</span>
+        <span class="arrow">→</span>
+    </a>
+</nav>
+
 <h1>{{ page.title }}</h1>
 
 {% if page.image %}
@@ -22,45 +57,14 @@ layout: default
 </div>
 {% endif %}
 
-{% assign works = site.works | sort: 'title' %}
-{% for work in works %}
-    {% if work.url == page.url %}
-        {% assign current_index = forloop.index %}
-        {% break %}
-    {% endif %}
-{% endfor %}
-
-{% assign prev_index = current_index | minus: 1 %}
-{% assign next_index = current_index | plus: 1 %}
-
 <nav class="work-nav">
-    {% if prev_index > 0 %}
-        {% assign prev_work = works[prev_index] | default: works.last %}
-        <a href="{{ prev_work.url | relative_url }}" class="work-nav-btn prev">
-            <span class="arrow">←</span>
-            <span class="label">Previous</span>
-        </a>
-    {% else %}
-        {% assign prev_work = works.last %}
-        <a href="{{ prev_work.url | relative_url }}" class="work-nav-btn prev">
-            <span class="arrow">←</span>
-            <span class="label">Previous</span>
-        </a>
-    {% endif %}
-
+    <a href="{{ prev_work.url | relative_url }}" class="work-nav-btn prev">
+        <span class="arrow">←</span>
+        <span class="label">Previous</span>
+    </a>
     <a href="{{ '/gallery/' | relative_url }}" class="work-nav-btn gallery">Gallery</a>
-
-    {% if next_index <= works.size %}
-        {% assign next_work = works[next_index] | default: works.first %}
-        <a href="{{ next_work.url | relative_url }}" class="work-nav-btn next">
-            <span class="label">Next</span>
-            <span class="arrow">→</span>
-        </a>
-    {% else %}
-        {% assign next_work = works.first %}
-        <a href="{{ next_work.url | relative_url }}" class="work-nav-btn next">
-            <span class="label">Next</span>
-            <span class="arrow">→</span>
-        </a>
-    {% endif %}
+    <a href="{{ next_work.url | relative_url }}" class="work-nav-btn next">
+        <span class="label">Next</span>
+        <span class="arrow">→</span>
+    </a>
 </nav>
