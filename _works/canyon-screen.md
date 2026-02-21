@@ -1,6 +1,6 @@
 ---
 title: "Canyon Screen"
-year: 
+year:
 category: "studio"
 materials: ""
 dimensions: ""

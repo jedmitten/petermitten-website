@@ -1,6 +1,6 @@
 ---
 title: "Gorge"
-year: 
+year:
 category: "studio"
 materials: ""
 dimensions: ""

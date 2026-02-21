@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+<div class="hero-section">
+    <a href="{{ '/assets/images/artist-photo-01.jpeg' | relative_url }}" target="_blank">
+        <img src="{{ '/assets/images/artist-photo-01-cropped.png' | relative_url }}" alt="{{ site.title }}" class="artist-avatar">
+    </a>
+    <h1>{{ page.title }}</h1>
+    <p class="tagline">{{ page.tagline }}</p>
+</div>
+
+<div class="slideshow-container">
+    <div class="slideshow">
+        {% assign featured_works = site.works | where: "featured", true %}
+        {% if featured_works.size == 0 %}
+            {% assign featured_works = site.works | limit: 6 %}
+        {% endif %}
+
+        {% for work in featured_works %}
+        <a href="{{ work.url | relative_url }}" class="slide">
+            <img src="{{ work.image | relative_url }}" alt="{{ work.title }}">
+            <div class="slide-caption">
+                <strong>{{ work.title }}</strong>
+                {% if work.year %}<span>{{ work.year }}</span>{% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <button class="slide-nav prev" onclick="moveSlide(-1)">‹</button>
+    <button class="slide-nav next" onclick="moveSlide(1)">›</button>
+
+    <div class="slide-dots">
+        {% for work in featured_works %}
+        <span class="dot" onclick="currentSlide({{ forloop.index }})"></span>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="cta">
+    <a href="{{ '/gallery/' | relative_url }}" class="btn-primary">View Full Gallery →</a>
+</div>
+
+{{ content }}
+
+<script>
+let slideIndex = 1;
+let slideTimer;
+
+showSlides(slideIndex);
+startAutoSlide();
+
+function moveSlide(n) {
+    clearTimeout(slideTimer);
+    showSlides(slideIndex += n);
+    startAutoSlide();
+}
+
+function currentSlide(n) {
+    clearTimeout(slideTimer);
+    showSlides(slideIndex = n);
+    startAutoSlide();
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex-1].classList.add("active");
+    dots[slideIndex-1].classList.add("active");
+}
+
+function startAutoSlide() {
+    slideTimer = setTimeout(() => {
+        slideIndex++;
+        showSlides(slideIndex);
+        startAutoSlide();
+    }, 5000); // Change slide every 5 seconds
+}
+
+// Pause auto-slide on hover
+document.querySelector('.slideshow-container').addEventListener('mouseenter', () => {
+    clearTimeout(slideTimer);
+});
+
+document.querySelector('.slideshow-container').addEventListener('mouseleave', () => {
+    startAutoSlide();
+});
+</script>
