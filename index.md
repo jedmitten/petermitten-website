@@ -1,10 +1,5 @@
 ---
-layout: default
-title: Home
+layout: home
+title: Peter Mitten
+tagline: Sculpture
 ---
-
-# Peter Mitten
-
-Sculpture archive.
-
-[Enter Gallery →]({{ '/gallery/' | relative_url }})

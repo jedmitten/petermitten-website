@@ -96,3 +96,230 @@ footer {
     margin-top: 40px;
     color: #777
 }
+
+/* Homepage Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.3s ease;
+    transform: scale(0.95);
+}
+
+.slide.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: scale(0.95);
+}
+
+.slide.active:hover {
+    transform: scale(1);
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 450px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.slide-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.slide-caption strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.slide-caption span {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Slideshow Navigation Buttons */
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.slide-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slide-nav.prev {
+    left: 10px;
+}
+
+.slide-nav.next {
+    right: 10px;
+}
+
+/* Slide Dots */
+.slide-dots {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #444;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #aaa;
+}
+
+/* CTA Button */
+.cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    font-size: 1.1em;
+}
+
+.btn-primary:hover {
+    background: #555;
+}
+
+/* Work Navigation */
+.work-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 1px solid #222;
+    gap: 20px;
+}
+
+.work-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #222;
+    color: #aaa;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.work-nav-btn:hover {
+    background: #333;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.work-nav-btn.gallery {
+    flex: 0 0 auto;
+}
+
+.work-nav-btn .arrow {
+    font-size: 1.2em;
+}
+
+.work-nav-btn.prev .arrow {
+    margin-right: 5px;
+}
+
+.work-nav-btn.next .arrow {
+    margin-left: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slideshow {
+        height: 400px;
+    }
+
+    .slide img {
+        max-height: 350px;
+    }
+
+    .slide-nav {
+        font-size: 1.5em;
+        padding: 8px 12px;
+    }
+
+    .work-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .work-nav-btn {
+        flex: 1 1 calc(50% - 10px);
+        justify-content: center;
+    }
+
+    .work-nav-btn.gallery {
+        flex: 1 1 100%;
+        order: -1;
+    }
+}
