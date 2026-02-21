@@ -331,5 +331,19 @@ footer {
     .work-nav-btn.gallery {
         flex: 1 1 100%;
         order: -1;
+.artist-photo {
+    float: left;
+    max-width: 350px;
+    margin: 0 30px 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .artist-photo {
+        float: none;
+        max-width: 100%;
+        margin: 20px 0;
+        display: block;
     }
 }
