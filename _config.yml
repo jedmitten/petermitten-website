@@ -2,6 +2,7 @@ title: "Peter Mitten"
 description: "Sculpture"
 url: "https://peter-mitten.com"
 baseurl: ""
+theme: null
 
 collections:
   works:

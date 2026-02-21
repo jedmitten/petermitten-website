@@ -1,10 +1,10 @@
 ---
-title: "crevasse 2"
-year: 
+title: "pipeline"
+year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/crevasse-2/crevasse.png
+image: /assets/images/works/pipeline/pipeline_view_b.png
 gallery_images:
 ---
 

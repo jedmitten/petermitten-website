@@ -1,10 +1,10 @@
 ---
-title: "crevasse 2"
-year: 
+title: "chalice"
+year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/crevasse-2/crevasse.png
+image: /assets/images/works/chalice/chalice.png
 gallery_images:
 ---
 
