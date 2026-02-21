@@ -7,6 +7,7 @@ dimensions: ""
 image: /assets/images/works/poly-playground/poly-playground.jpg
 featured: true
 gallery_images:
+  - src: /assets/images/works/poly-playground/poly-playground-slide.jpg
 ---
 
 Description goes here.

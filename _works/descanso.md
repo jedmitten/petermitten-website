@@ -1,10 +1,10 @@
 ---
-title: "crevasse 2"
-year: 
+title: "descanso"
+year:
 category: "studio"
 materials: ""
 dimensions: ""
-image: /assets/images/works/crevasse-2/crevasse.png
+image: /assets/images/works/descanso/descanso.png
 gallery_images:
 ---
 
