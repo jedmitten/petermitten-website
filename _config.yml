@@ -27,6 +27,8 @@ collections:
   works:
     output: true
     permalink: /works/:slug/
+  exhibitions:
+    output: false
 
 defaults:
   - scope:
