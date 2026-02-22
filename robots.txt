@@ -1,5 +1,7 @@
+---
+---
 User-agent: *
 Allow: /
 Disallow: /_site/
 
-Sitemap: https://www.peter-mitten.com/sitemap.xml
+Sitemap: {{ site.url }}/sitemap.xml
