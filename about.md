@@ -4,6 +4,7 @@ title: About Peter Mitten - San Diego Sculptor
 description: Learn about Peter Mitten's 40+ year career creating bronze, aluminum and iron sculptures for public spaces across the United States.
 permalink: /about/
 schema: person
+prose: true
 ---
 
 {% include schema-person.html %}
