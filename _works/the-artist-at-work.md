@@ -1,5 +1,6 @@
 ---
-title: "the artist at work"
+title: "The Artist at Work"
+alt_text: "The Artist at Work - sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

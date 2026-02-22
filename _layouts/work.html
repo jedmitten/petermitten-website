@@ -5,25 +5,28 @@ layout: default
 {% assign works = site.works | sort: 'title' %}
 {% for work in works %}
     {% if work.url == page.url %}
-        {% assign current_index = forloop.index %}
+        {% assign current_index = forloop.index0 %}
         {% break %}
     {% endif %}
 {% endfor %}
 
 {% assign prev_index = current_index | minus: 1 %}
 {% assign next_index = current_index | plus: 1 %}
+{% assign last_index = works.size | minus: 1 %}
 
-{% if prev_index > 0 %}
+{% if current_index > 0 %}
     {% assign prev_work = works[prev_index] %}
 {% else %}
     {% assign prev_work = works.last %}
 {% endif %}
 
-{% if next_index <= works.size %}
+{% if next_index <= last_index %}
     {% assign next_work = works[next_index] %}
 {% else %}
     {% assign next_work = works.first %}
 {% endif %}
+
+{% include schema-artwork.html %}
 
 <nav class="work-nav">
     <a href="{{ prev_work.url | relative_url }}" class="work-nav-btn prev">
@@ -40,7 +43,7 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 {% if page.image %}
-<img class="hero" src="{{ page.image | relative_url }}">
+<img class="hero" src="{{ page.image | relative_url }}" alt="{{ page.alt_text | default: page.title | append: ' - sculpture by Peter Mitten' }}">
 {% endif %}
 
 <p class="meta">
@@ -52,7 +55,7 @@ layout: default
 {% if page.gallery_images %}
 <div class="grid detail">
     {% for img in page.gallery_images %}
-    <img src="{{ img.src | relative_url }}">
+    <img src="{{ img.src | relative_url }}" alt="{{ img.caption | default: page.title | append: ' - detail' }}">
     {% endfor %}
 </div>
 {% endif %}

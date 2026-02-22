@@ -1,6 +1,7 @@
 ---
-title: "Convergence at Straubi s"
-year: 
+title: "Convergence at Straubi's"
+alt_text: "Convergence at Straubi's - abstract sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

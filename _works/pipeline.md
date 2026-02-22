@@ -1,5 +1,6 @@
 ---
-title: "pipeline"
+title: "Pipeline"
+alt_text: "Pipeline - abstract metal sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

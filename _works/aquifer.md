@@ -1,6 +1,7 @@
 ---
-title: "aquifer"
-year: 
+title: "Aquifer"
+alt_text: "Aquifer - abstract metal sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

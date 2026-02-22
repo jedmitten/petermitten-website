@@ -1,8 +1,27 @@
-title: "Peter Mitten"
-description: "Sculpture"
-url: "https://peter-mitten.com"
+title: "Peter Mitten - Sculptor"
+description: >-
+  Peter Mitten is a sculptor working in bronze, cast aluminum, and iron.
+  Based in San Diego, California, his work can be seen in public installations
+  and private collections across the United States.
+url: "https://www.peter-mitten.com"
 baseurl: ""
 theme: null
+
+author:
+  name: Peter Mitten
+  email: petermitten@mac.com
+  location: San Diego, California
+
+social:
+  name: Peter Mitten
+  links:
+    - https://www.peter-mitten.com
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+google_site_verification: ""
 
 collections:
   works:

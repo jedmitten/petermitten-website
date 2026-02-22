@@ -1,5 +1,6 @@
 ---
-title: "chalice"
+title: "Chalice"
+alt_text: "Chalice - abstract metal sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

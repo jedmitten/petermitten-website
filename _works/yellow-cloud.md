@@ -1,5 +1,6 @@
 ---
-title: "yellow cloud"
+title: "Yellow Cloud"
+alt_text: "Yellow Cloud - abstract sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

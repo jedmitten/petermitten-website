@@ -1,6 +1,7 @@
 ---
-title: "valle 7"
-year: 
+title: "Valle 7"
+alt_text: "Valle 7 - abstract metal sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

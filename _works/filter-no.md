@@ -1,5 +1,6 @@
 ---
-title: "filter no"
+title: "Filter No. 20"
+alt_text: "Filter No. 20 - abstract metal sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

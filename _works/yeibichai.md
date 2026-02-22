@@ -1,5 +1,6 @@
 ---
 title: "Yeibichai"
+alt_text: "Yeibichai - abstract sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

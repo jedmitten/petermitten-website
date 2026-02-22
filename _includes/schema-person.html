@@ -1,0 +1,34 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Mitten",
+  "jobTitle": "Sculptor",
+  "description": "{{ site.description | strip_newlines | strip }}",
+  "url": "{{ site.url }}",
+  "email": "petermitten@mac.com",
+  "telephone": "+1-760-525-1563",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Southern Illinois University",
+      "description": "MFA in Sculpture, 1976"
+    }
+  ],
+  "award": [
+    "Pollock Krasner Foundation Grant (1991)",
+    "California Arts Council SLPP Grant (1984)",
+    "Artist in Residence, Artpark (1990)"
+  ],
+  "sameAs": [
+    "{{ site.url }}",
+    "{{ site.url }}/cv/"
+  ]
+}
+</script>

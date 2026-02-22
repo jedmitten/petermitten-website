@@ -1,6 +1,7 @@
 ---
 title: "Cloud 7"
-year: 
+alt_text: "Cloud 7 - abstract metal sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

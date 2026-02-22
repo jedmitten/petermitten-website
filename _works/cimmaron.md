@@ -1,6 +1,7 @@
 ---
-title: "cimmaron"
-year: 
+title: "Cimmaron"
+alt_text: "Cimmaron - abstract sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

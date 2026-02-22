@@ -1,6 +1,7 @@
 ---
-title: "crevasse"
-year: 
+title: "Crevasse"
+alt_text: "Crevasse - abstract metal sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

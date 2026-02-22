@@ -7,7 +7,7 @@ layout: default
 <section class="grid">
     {% for work in site.works %}
     <a class="tile" href="{{ work.url | relative_url }}">
-        <img src="{{ work.image | relative_url }}" alt="{{ work.title }}">
+        <img src="{{ work.image | relative_url }}" alt="{{ work.alt_text | default: work.title | append: ' - sculpture by Peter Mitten' }}">
         <div class="cap">
             <strong>{{ work.title }}</strong><br>
             <span>{{ work.year }}</span>
