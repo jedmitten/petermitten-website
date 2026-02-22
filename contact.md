@@ -3,6 +3,7 @@ layout: default
 title: Contact Peter Mitten - Sculpture Commissions & Inquiries
 description: Contact sculptor Peter Mitten for commission inquiries, private showings, and sculpture installations. Based in San Diego, California.
 permalink: /contact/
+prose: true
 ---
 
 # Contact
