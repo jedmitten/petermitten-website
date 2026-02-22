@@ -1,6 +1,7 @@
 ---
-title: "concept sketch"
-year: 
+title: "Concept Sketch"
+alt_text: "Concept Sketch - sculptural study by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

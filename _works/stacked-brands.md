@@ -1,6 +1,7 @@
 ---
 title: "Stacked Brands"
-year: 
+alt_text: "Stacked Brands - abstract metal sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

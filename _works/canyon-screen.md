@@ -1,5 +1,6 @@
 ---
 title: "Canyon Screen"
+alt_text: "Canyon Screen - large-scale abstract sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

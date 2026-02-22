@@ -1,5 +1,6 @@
 ---
-title: "poly playground"
+title: "Poly Playground"
+alt_text: "Poly Playground - public art sculpture installation by Peter Mitten"
 year:
 category: "studio"
 materials: ""
@@ -8,6 +9,7 @@ image: /assets/images/works/poly-playground/poly-playground.jpg
 featured: true
 gallery_images:
   - src: /assets/images/works/poly-playground/poly-playground-slide.jpg
+    caption: "Poly Playground - detail"
 ---
 
 Description goes here.

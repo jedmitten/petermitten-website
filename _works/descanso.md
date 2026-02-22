@@ -1,5 +1,6 @@
 ---
-title: "descanso"
+title: "Descanso"
+alt_text: "Descanso - abstract sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

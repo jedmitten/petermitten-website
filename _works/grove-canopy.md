@@ -1,5 +1,6 @@
 ---
 title: "Grove Canopy"
+alt_text: "Grove Canopy - large-scale abstract sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

@@ -1,6 +1,7 @@
 ---
-title: "the two ls"
-year: 
+title: "The Two Ls"
+alt_text: "The Two Ls - abstract sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

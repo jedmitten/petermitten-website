@@ -1,6 +1,7 @@
 ---
-title: "Homage to jake"
-year: 
+title: "Homage to Jake"
+alt_text: "Homage to Jake - abstract sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

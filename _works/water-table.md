@@ -1,5 +1,6 @@
 ---
-title: "water table"
+title: "Water Table"
+alt_text: "Water Table - abstract metal sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

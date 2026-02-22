@@ -1,6 +1,7 @@
 ---
 title: "Desert Group"
-year: 
+alt_text: "Desert Group - sculpture grouping by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""

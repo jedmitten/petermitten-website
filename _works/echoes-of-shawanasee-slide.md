@@ -1,5 +1,6 @@
 ---
-title: "echoes of shawanasee slide"
+title: "Echoes of Shawanasee"
+alt_text: "Echoes of Shawanasee - abstract sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""
@@ -8,7 +9,7 @@ image: /assets/images/works/echoes-of-shawanasee-slide/echoes-of-shawanasee-slid
 featured: true
 gallery_images:
   - src: /assets/images/works/echoes-of-shawanasee-slide/echoes-of-shawanasee-slide1-400x350.jpg
-    alt: "echoes of shawanasee slide"
+    caption: "Echoes of Shawanasee - detail"
 ---
 
 Description goes here.

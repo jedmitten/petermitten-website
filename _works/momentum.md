@@ -1,5 +1,6 @@
 ---
 title: "Momentum"
+alt_text: "Momentum - abstract metal sculpture by Peter Mitten"
 year:
 category: "studio"
 materials: ""

@@ -1,6 +1,7 @@
 ---
-title: "paso"
-year: 
+title: "Paso"
+alt_text: "Paso - abstract sculpture by Peter Mitten"
+year:
 category: "studio"
 materials: ""
 dimensions: ""
