@@ -10,6 +10,7 @@ permalink: /exhibitions/
 {% assign selected = site.exhibitions | where: "past", true | where: "category", "selected" | sort: "year" | reverse %}
 
 {% if upcoming.size > 0 %}
+
 ## Upcoming
 
 {% for ex in upcoming %}
@@ -33,11 +34,15 @@ permalink: /exhibitions/
 ## One Person Exhibitions
 
 {% for ex in solo %}
+
 - {% if ex.link and ex.link != "" %}<a href="{{ ex.link }}" target="_blank" rel="noopener">{{ ex.title }}</a>{% else %}{{ ex.title }}{% endif %}{% if ex.venue and ex.venue != ex.title %}, {{ ex.venue }}{% endif %}{% if ex.location %}, {{ ex.location }}{% endif %}{% if ex.year %} — {{ ex.year }}{% endif %}
+
 {% endfor %}
 
 ## Selected Exhibitions
 
 {% for ex in selected %}
+
 - {% if ex.link and ex.link != "" %}<a href="{{ ex.link }}" target="_blank" rel="noopener">{{ ex.title }}</a>{% else %}{{ ex.title }}{% endif %}{% if ex.location %}, {{ ex.location }}{% endif %}{% if ex.year %} — {{ ex.year }}{% endif %}
+
 {% endfor %}

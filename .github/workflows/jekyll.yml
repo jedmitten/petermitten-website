@@ -11,24 +11,54 @@ on:
   push:
     branches: ["main"]
 
+  pull_request: 
+    branches: ["main"]
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# This allows independent PRs to validate concurrently
 concurrency:
-  group: "pages"
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
-
+  
 jobs:
+  # Validate structure of files
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          
+      - name: Install Markdown Linter
+        run: npm install --global markdownlint-cli2
+        
+      - name: Lint YAML
+        run: |
+          ruby -e '
+            require "yaml"
+            Dir.glob("**/*.{yml,yaml}", File::FNM_DOTMATCH).each do |file|
+              next if file.start_with?("_site/", "vendor/")
+              YAML.parse_file(file)
+              puts "OK: #{file}"
+            end
+          '
+      - name: Lint Markdown
+        run: markdownlint-cli2 "**/*.md" "#_site" "#vendor"
+          
   # Build job
   build:
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,9 +75,16 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --strict_front_matter --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+          
+      - name: Install HTMLProofer
+        run: gem install html-proofer -v '~> 5.0'
+      - name: Check generated HTML
+        run: |
+          htmlproofer ./_site --disable-external
+          
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
@@ -58,6 +95,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions: 
+      pages: write
+      id-token: write
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     steps:
       - name: Deploy to GitHub Pages
