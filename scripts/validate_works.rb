@@ -12,7 +12,8 @@ REQUIRED_FIELDS = {
 OPTIONAL_FIELDS = {
   "location" => String,
   "materials" => String,
-  "description" => String
+  "description" => String,
+  "gallery_images" => Array
 }.freeze
 
 errors = []
