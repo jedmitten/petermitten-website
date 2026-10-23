@@ -44,17 +44,11 @@ jobs:
         run: npm install --global markdownlint-cli2
         
       - name: Lint YAML
-        run: |
-          ruby -e '
-            require "yaml"
-            Dir.glob("**/*.{yml,yaml}", File::FNM_DOTMATCH).each do |file|
-              next if file.start_with?("_site/", "vendor/")
-              YAML.parse_file(file)
-              puts "OK: #{file}"
-            end
-          '
+        run: ruby scripts/validate_yaml.rb
       - name: Lint Markdown
         run: markdownlint-cli2 "**/*.md" "#_site" "#vendor"
+      - name: Validate Works Front Matter
+        run: ruby scripts/validate_works.rb
           
   # Build job
   build:
