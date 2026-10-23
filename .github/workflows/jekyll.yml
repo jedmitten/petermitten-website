@@ -45,8 +45,6 @@ jobs:
           
       - name: Install Markdown Linter
         run: npm install --global markdownlint-cli2
-      - name: Install HTMLProofer
-        run: gem install html-proofer
         
       - name: Lint YAML
         run: |
@@ -59,10 +57,7 @@ jobs:
             end
           '
       - name: Lint Markdown
-        run: markdownlintv2-cli "**/*.md" "#_site" "#vendor"
-      - name: Check generated HTML
-        run: |
-          htmlproofer ./_site --disable-external
+        run: markdownlint-cli2 "**/*.md" "#_site" "#vendor"
           
   # Build job
   build:
@@ -86,6 +81,13 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+          
+      - name: Install HTMLProofer
+        run: gem install html-proofer
+      - name: Check generated HTML
+        run: |
+          htmlproofer ./_site --disable-external
+          
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
