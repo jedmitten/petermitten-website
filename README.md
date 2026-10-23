@@ -27,7 +27,7 @@ The site lives at **[peter-mitten.com](https://peter-mitten.com)** and is hosted
 
 Each sculpture is a plain text file inside the `_works/` folder, for example `_works/gorge.md`. Open the file and you will see a block at the top between the `---` lines — this holds the structured information about the piece.
 
-```
+```text
 ---
 title: "Gorge"
 alt_text: "Gorge - abstract sculpture by Peter Mitten"
@@ -65,7 +65,7 @@ Any text written below the closing `---` appears as a description on the work's 
 
 2. Paste in the front matter template and fill in the details:
 
-```
+```text
 ---
 title: "Desert Canyon"
 alt_text: "Desert Canyon - abstract metal sculpture by Peter Mitten"
@@ -92,7 +92,7 @@ To change the main image for a work, update the `image:` line in the work's fron
 
 To add detail or alternate-view images, add them to the work's image folder and list them under `gallery_images:` in the front matter:
 
-```
+```text
 gallery_images:
   - src: /assets/images/works/gorge/gorge-2.png
   - src: /assets/images/works/gorge/gorge-3.png
@@ -118,7 +118,7 @@ Each exhibition is a plain text file inside the `_exhibitions/` folder. The Exhi
 
 Create a new file in `_exhibitions/` with a descriptive name, e.g. `_exhibitions/circle-center-2027.md`:
 
-```
+```text
 ---
 title: "Exhibition Title"
 date: 2027-03-15
@@ -159,7 +159,7 @@ Open `cv.md` and edit the text directly. This page uses standard formatting:
 
 Create a new file at the root level of the project, e.g. `statement.md`, with this at the top:
 
-```
+```text
 ---
 layout: default
 title: Statement
